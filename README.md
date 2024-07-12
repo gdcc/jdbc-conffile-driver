@@ -24,7 +24,7 @@ There is an inquiry to add a TOML Config Source to upstream: [payara/payara#6822
 
 ### Usage
 
-**IMPORTANT**: For now, this driver supports only reading TOML files.
+**IMPORTANT**: For now, this driver supports only reading [TOML](https://toml.io/en/v1.0.0) files.
 
 1. After packaging (`mvn package`), put the JAR under `glassfish/lib` folder (see also [Class Loading][payara-docs-classloading])
 2. You should restart your appserver now to make it pick up the library.
