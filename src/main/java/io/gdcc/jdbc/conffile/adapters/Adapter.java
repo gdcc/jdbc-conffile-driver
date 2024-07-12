@@ -19,14 +19,16 @@ public abstract class Adapter implements AutoCloseable {
         
         public static Adapter create(String type, Path directory, String basename, String profile) throws IOException, SQLException {
             if (type.equals("toml")) {
-                return new TomlAdapter(directory, basename, profile);
+                //return new TomlAdapter(directory, basename, profile);
+                return new JacksonTomlAdapter(directory, basename, profile);
             }
             throw new SQLFeatureNotSupportedException("Unsupported adapter type: " + type);
         }
         
         public static List<String> suffixesForType(String type) {
             if (type.equals("toml")) {
-                return new TomlAdapter().validSuffixes();
+                //return new TomlAdapter().validSuffixes();
+                return new JacksonTomlAdapter().validSuffixes();
             }
             return List.of();
         }
