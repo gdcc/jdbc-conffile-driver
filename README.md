@@ -41,6 +41,7 @@ Hints:
 - You can replace the `${ENV=CONFIG_DIR}` part with a path or other env var name, just let the (resolved) value point to a Payara user readable directory.
 - The table name will determine the files' basename. Using the example configuration above, the driver will try to read from the file at `${CONFIG_DIR}/dataverse.toml`.
 - Profiles are supported, too. Just provide a file `${CONFIG_DIR}/<table name>-<profile>.toml`.
+- You can provide arbitrary values for `--keycolumname` and `--valuecolumname`, they are not used as a TOML file is not a real SQL table.
 
 ### Caching
 Payara caches values, by [default for 60s](https://github.com/payara/Payara/blob/1411893e1db88eef9155496ee0c06477ffd3a67e/nucleus/payara-modules/nucleus-microprofile/config-service/src/main/java/fish/payara/nucleus/microprofile/config/spi/MicroprofileConfigConfiguration.java#L129).
